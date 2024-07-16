@@ -1,0 +1,47 @@
+plugins {
+    id("androidx.privacysandbox.library")
+    alias(libs.plugins.kotlin.android)
+}
+
+android {
+    namespace = "com.example.myapplication.sandbox.mylibrary_runtime_sdk"
+    compileSdk = 34
+    compileSdkExtension = 12
+
+    defaultConfig {
+        minSdk = 24
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+
+dependencies {
+    ksp (libs.androidx.tools.apicompiler)
+    implementation (libs.androidx.tools)
+    implementation (libs.androidx.lifecycle.common)
+    implementation (libs.androidx.sdkruntime.provider)
+    implementation (libs.kotlinx.coroutines.core)
+    implementation (libs.kotlinx.coroutines.android)
+    implementation (libs.androidx.activity.core)
+    implementation (libs.androidx.activity.provider)
+    implementation (libs.androidx.ui.core)
+    implementation (libs.androidx.ui.provider)
+}

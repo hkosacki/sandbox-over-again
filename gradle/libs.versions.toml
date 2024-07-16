@@ -1,0 +1,54 @@
+[versions]
+activityCore = "1.0.0-alpha01"
+activityProvider = "1.0.0-alpha01"
+agp = "8.3.0"
+kotlin = "1.9.10"
+coreKtx = "1.13.1"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+kotlinxCoroutinesAndroid = "1.7.3"
+lifecycleCommon = "2.8.3"
+material = "1.12.0"
+constraintlayout = "2.1.4"
+navigationFragmentKtx = "2.7.7"
+navigationUiKtx = "2.7.7"
+sdkruntimeProvider = "1.0.0-alpha13"
+toolsApicompiler = "1.0.0-alpha09"
+uiVersion = "1.0.0-alpha09"
+
+[libraries]
+androidx-activity-client = { module = "androidx.privacysandbox.activity:activity-client", version.ref = "activityCore" }
+androidx-activity-provider = { module = "androidx.privacysandbox.activity:activity-provider", version.ref = "activityProvider" }
+androidx-activity-core = { module = "androidx.privacysandbox.activity:activity-core", version.ref = "activityCore" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-sdkruntime-client = { module = "androidx.privacysandbox.sdkruntime:sdkruntime-client", version.ref = "sdkruntimeProvider" }
+androidx-sdkruntime-provider = { module = "androidx.privacysandbox.sdkruntime:sdkruntime-provider", version.ref = "sdkruntimeProvider" }
+androidx-lifecycle-common = { module = "androidx.lifecycle:lifecycle-common", version.ref = "lifecycleCommon" }
+androidx-tools = { module = "androidx.privacysandbox.tools:tools", version.ref = "toolsApicompiler" }
+androidx-tools-apicompiler = { module = "androidx.privacysandbox.tools:tools-apicompiler", version.ref = "toolsApicompiler" }
+androidx-ui-client = { module = "androidx.privacysandbox.ui:ui-client", version.ref = "uiVersion" }
+androidx-ui-core = { module = "androidx.privacysandbox.ui:ui-core", version.ref = "uiVersion" }
+androidx-ui-provider = { module = "androidx.privacysandbox.ui:ui-provider", version.ref = "uiVersion" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesAndroid" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+
+#Caused by: java.lang.IllegalArgumentException: SDK uses incompatible Privacy Sandbox tooling (version 3). Current version is 1.
+#at androidx.privacysandbox.tools.apigenerator.PrivacySandboxApiGenerator.ensureValidMetadata(PrivacySandboxApiGenerator.kt:203)
+#at androidx.privacysandbox.tools.apigenerator.PrivacySandboxApiGenerator.unzipDescriptorsFileAndParseStubs(PrivacySandboxApiGenerator.kt:183)
+#at androidx.privacysandbox.tools.apigenerator.PrivacySandboxApiGenerator.generate(PrivacySandboxApiGenerator.kt:72)
+#... 124 more
