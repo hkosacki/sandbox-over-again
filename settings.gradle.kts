@@ -1,4 +1,8 @@
 pluginManagement {
+//    plugins {
+//        alias(libs.plugins.android.application) apply false
+//        alias(libs.plugins.android.library) apply false
+//    }
     repositories {
         maven { url = uri("https://androidx.dev/snapshots/builds/11514708/artifacts/repository/") }
         google {

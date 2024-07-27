@@ -9,7 +9,7 @@ android {
 
     bundle {
         // This package name is used to load this SDK in the Privacy Sandbox later on.
-        packageName = "com.example.sdk"
+        packageName = "com.example.mylibrary"
 
         setVersion(1, 0, 0)
         // SDK provider defined in the SDK Runtime library. This is an important part of the

@@ -8,6 +8,10 @@ android {
     compileSdk = 34
     compileSdkExtension = 12
 
+    privacySandbox {
+        enable = true
+    }
+
     defaultConfig {
         minSdk = 24
 
@@ -25,18 +29,18 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = "1.8"
     }
     experimentalProperties["android.privacySandboxSdk.apiGenerator"] =
         project.dependencies.create(
             "androidx.privacysandbox.tools:tools-apigenerator:1.0.0-alpha09")
 
     experimentalProperties["android.privacySandboxSdk.apiGenerator.generatedRuntimeDependencies"] = listOf(
-        project.dependencies.create("org.jetbrains.kotlin:kotlin-stdlib:1.7.20-RC"),
+        project.dependencies.create("org.jetbrains.kotlin:kotlin-stdlib:1.8.22"),
         project.dependencies.create("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.1"),
         project.dependencies.create("androidx.privacysandbox.activity:activity-core:${libs.androidx.activity.core.get().version}"),
         project.dependencies.create("androidx.privacysandbox.activity:activity-client:${libs.androidx.activity.client.get().version}"),
@@ -60,11 +64,11 @@ dependencies {
     implementation (libs.androidx.activity.client)
 
     implementation (libs.androidx.appcompat)
-
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+//
+//    implementation(libs.androidx.core.ktx)
+//    implementation(libs.androidx.appcompat)
+//    implementation(libs.material)
+//    testImplementation(libs.junit)
+//    androidTestImplementation(libs.androidx.junit)
+//    androidTestImplementation(libs.androidx.espresso.core)
 }
